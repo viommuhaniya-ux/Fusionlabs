@@ -7,6 +7,7 @@ import HowItWorks from './components/HowItWorks'
 import Testimonials from './components/Testimonials'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
+import AuthPage from './pages/AuthPage'
 
 export default function App() {
   return (

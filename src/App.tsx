@@ -24,3 +24,13 @@ export default function App() {
     </div>
   )
 }
+return (
+ <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Auth />} />
+        <Route path="/signup" element={<Auth />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

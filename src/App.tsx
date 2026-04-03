@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom"
+
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import LogoBar from './components/LogoBar'
@@ -7,11 +9,13 @@ import HowItWorks from './components/HowItWorks'
 import Testimonials from './components/Testimonials'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
-import Authpage from './pages/AuthPage'
 
-export default function App() {
+import AuthPage from './pages/AuthPage'
+
+// Home page (tera current UI)
+function Home() {
   return (
-    <div className="min-h-screen" style={{ background: '#f2f2f3' }}>
+    <>
       <Nav />
       <Hero />
       <LogoBar />
@@ -21,16 +25,18 @@ export default function App() {
       <Testimonials />
       <CTASection />
       <Footer />
-    </div>
+    </>
   )
 }
-return (
- <BrowserRouter>
+
+export default function App() {
+  return (
+    <div className="min-h-screen" style={{ background: '#f2f2f3' }}>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Auth />} />
-        <Route path="/signup" element={<Auth />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<AuthPage mode="login" />} />
+        <Route path="/signup" element={<AuthPage mode="signup" />} />
       </Routes>
-    </BrowserRouter>
-  );
+    </div>
+  )
 }
